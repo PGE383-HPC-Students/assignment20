@@ -3,7 +3,7 @@ language: python
 services: 
   - docker
 env:
-  - ASSIGNMENT=assignment19
+  - ASSIGNMENT=assignment20
 before_install:
   - docker pull johntfoster/pytrilinos
 install:
