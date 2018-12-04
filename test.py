@@ -5,7 +5,7 @@ import unittest
 import numpy as np
 
 from PyTrilinos import Epetra
-from assignment19 import OneDimNonliear
+from assignment20 import OneDimNonliear
 
 class TestOneDimNonlinear(unittest.TestCase):
 
