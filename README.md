@@ -1,8 +1,6 @@
 # Homework Assignment 20
 
-[![Build Status](https://travis-ci.com/PGE383-HPC/assignment20.svg?token=SnMGq692xXXqxzyE6QSj&branch=master)](https://travis-ci.com/PGE383-HPC/assignment20)
-
-In this assignment the objective is to solve the a nonlinear equation using  NOX, i.e.
+In this assignment the objective is to solve the nonlinear equation using  NOX, i.e.
 
 ![equation](http://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cpartial%5E2%20u%28x%29%7D%7B%5Cpartial%20x%5E2%7D-k%20u%28x%29%5E2%20%3D%200)
 
