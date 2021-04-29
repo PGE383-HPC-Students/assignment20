@@ -101,27 +101,10 @@ class OneDimNonliear(NOX.Epetra.Interface.Required):
             # Initialization: get the overlap u, mesh size, and perform the
             # communication
 
-            importer = self.get_importer()
-            u_overlap = self.get_overlap_solution()
-            u_sorted_overlap = self.get_sorted_overlap_solution()
+            #####################
+            ### Add code here ###
+            #####################    
 
-            u_overlap.Import(u, importer, Epetra.Insert)
-
-            u_sorted_overlap[:] = u_overlap[self.get_sorted_overlap_indices()]
-            if flag == 0:
-                print(u_sorted_overlap)
-
-            # Compute the residual on the interior
-            F[self.get_slice()] = (u_sorted_overlap[:-2] - 2*u_sorted_overlap[1:-1] + 
-                    u_sorted_overlap[2:]) / (self.dx * self.dx) -  self.k * u_sorted_overlap[1:-1] * u_sorted_overlap[1:-1]
-
-            # Compute the residual on the boundaries
-            if self.has_boundary_condition_1: 
-                F[0] = u_sorted_overlap[0] - self.boundary_condition_1
-            if self.has_boundary_condition_2: 
-                F[-1] = u_sorted_overlap[-1] - self.boundary_condition_2
-
-            self.u[:] = u[:]
             return True
         except Exception as e:
             print("Processor", self.rank,
